@@ -1,10 +1,4 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CvEntityProje.Default" %>
-
-<!--Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -22,24 +16,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             window.scrollTo(0, 1);
         }
     </script>
-    <!-- Custom Theme files -->
     <link href="web/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
     <link href="web/css/style.css" type="text/css" rel="stylesheet" media="all">
-    <!-- font-awesome icons -->
     <link href="web/css/fontawesome-all.min.css" rel="stylesheet">
-    <!-- //Custom Theme files -->
-    <!-- online-fonts -->
     <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-    <!-- //online-fonts -->
 </head>
 <body>
     <div class="sidenav text-center">
         <div class="side_top">
             <img src="web/images/about.jpg" alt="news image" class="img-fluid navimg">
-            <h1 class="top_hd mt-2"><a href="index.html">Conjoint</a></h1>
-            <p class="top_hdp mt-2">Fermentum lobortis non tristique ante proin sociis</p>
+            <h1 class="top_hd mt-2"><a href="index.html">Burak Temelkaya</a></h1>
+            <p class="top_hdp mt-2">Yazılım Mühendisi</p>
         </div>
-        <!-- header -->
+        <!-- Başlık -->
         <header>
             <div class="nav-top">
                 <nav class="mnu mx-auto">
@@ -55,7 +44,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </nav>
             </div>
         </header>
-        <!-- //header -->
+        <!-- //Başlık -->
     </div>
     <div class="main">
         <div class="banner-text-w3ls" id="home">
@@ -73,7 +62,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
             </div>
         </div>
-        <!-- about -->
+        <!-- Eğitim -->
         <section class="slide-wrapper" id="about">
             <h2 class="w3_head mb-4">Eğitim Hayatım</h2>
             <br>
@@ -83,8 +72,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </ItemTemplate>
             </asp:Repeater>
         </section>
-        <!-- //about -->
-        <!-- services -->
+        <!-- //Eğitim -->
+        <!-- Yetenekler -->
         <section class="services" id="services">
             <div class="container">
                 <h3 class="w3_head mb-4 text-left">Yetenekler</h3>
@@ -106,8 +95,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </ul>
             </div>
         </section>
-        <!-- //services -->
-        <!-- news -->
         <div class="news" id="news">
             <h3 class="w3_head mb-4 text-left">Deneyimlerim</h3>
             <asp:Repeater ID="RepeaterIsDeneyimleri" runat="server">
@@ -118,36 +105,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
         </div>
-        <!-- //news -->
-        <!-- contact -->
+        <!-- //Yetenekler -->
+        <!-- İlerişim -->
         <section class="wedo" id="contact">
-            <h3 class="w3_head mb-4 text-left">Contact Me</h3>
-            <p class="iner mt-md-5 text-left">Nunc fermentum adipiscing tempor cursus nascetur adipiscing adipiscing. Primis aliquam mus lacinia lobortis.Nunc fermentum adipiscing tempor cursus nascetur adipiscing adipiscing. </p>
+            <h3 class="w3_head mb-4 text-left">İletişim</h3>
             <div class="contact_grid_right mt-5 mx-auto text-left">
-                <form action="#" method="post">
+                <form action="#" method="post" runat="server">
                     <div class="row contact_top">
                         <div class="col-sm-6">
-                            <input type="text" name="Name" placeholder="Name" required="">
+                            <asp:TextBox ID="txtAd" runat="server" placeholder="İsminiz" required=""></asp:TextBox>
                         </div>
                         <div class="col-sm-6">
-                            <input type="email" name="Email" placeholder="Email" required="">
+                            <asp:TextBox ID="txtMail" runat="server" placeholder="Mailiniz" required="" TextMode="Email"></asp:TextBox>
                         </div>
                     </div>
-                    <input type="text" name="Name" placeholder="Name" required="">
-                    <textarea name="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
-                    <button type="submit" class="btn">Send Message</button>
-                    <button type="reset" class="btn">Reset</button>
+                    <asp:TextBox ID="txtKonu" runat="server" placeholder="Konu"></asp:TextBox>
+                    <asp:TextBox ID="txtMesaj" runat="server" placeholder="Mesajınız" TextMode="MultiLine"></asp:TextBox>
+                    <button type="submit" runat="server" ID="btnMesajGonder" class="btn" onserverClick="btnMesajGonder_Click">Gönder</button>
+                    <button type="reset" class="btn">Sıfırla</button>
                     <div class="clearfix"></div>
                 </form>
             </div>
             <div class="cpy-right text-center">
                 <p>
-                    © 2018 Conjoint. All rights reserved | Design by
-					<a href="http://w3layouts.com">W3layouts.</a>
+                    © 2021 Burak Temelkaya. Tüm Hakları Saklıdır | 
                 </p>
             </div>
         </section>
-        <!-- //contact -->
     </div>
 
 </body>

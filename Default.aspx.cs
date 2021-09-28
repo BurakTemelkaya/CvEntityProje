@@ -23,5 +23,16 @@ namespace CvEntityProje
             RepeaterYetenekler.DataSource = YeteneklerValues;
             RepeaterYetenekler.DataBind();
         }
+
+        protected void btnMesajGonder_Click(object sender, EventArgs e)
+        {
+            TBLILETISIM t = new TBLILETISIM();
+            t.ADSOYAD = txtAd.Text;
+            t.MAIL = txtMail.Text;
+            t.KONU = txtKonu.Text;
+            t.MESAJ = txtMesaj.Text;
+            db.TBLILETISIM.Add(t);
+            db.SaveChanges();
+        }
     }
 }

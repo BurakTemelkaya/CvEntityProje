@@ -5,6 +5,14 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="DBCVENTITYModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TBLADMIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KULLANICIADI" Type="varchar" MaxLength="50" />
+          <Property Name="SIFRE" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="TBLADRES">
           <Key>
             <PropertyRef Name="ID" />
@@ -38,6 +46,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ADSOYAD" Type="varchar" MaxLength="50" />
           <Property Name="MAIL" Type="varchar" MaxLength="50" />
+          <Property Name="KONU" Type="varchar" MaxLength="50" />
           <Property Name="MESAJ" Type="varchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="TBLYETENEKLER">
@@ -49,6 +58,7 @@
           <Property Name="DERECE" Type="tinyint" />
         </EntityType>
         <EntityContainer Name="DBCVENTITYModelStoreContainer">
+          <EntitySet Name="TBLADMIN" EntityType="Self.TBLADMIN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLADRES" EntityType="Self.TBLADRES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLCALISMALARIM" EntityType="Self.TBLCALISMALARIM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLHAKKIMDA" EntityType="Self.TBLHAKKIMDA" Schema="dbo" store:Type="Tables" />
@@ -75,15 +85,6 @@
           <Property Name="EGITIM" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="ISDENEYIMLERI" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="TBLILETISIM">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ADSOYAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="MESAJ" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="TBLYETENEKLER">
           <Key>
             <PropertyRef Name="ID" />
@@ -95,9 +96,10 @@
         <EntityContainer Name="DBCVENTITYEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TBLCALISMALARIM" EntityType="Self.TBLCALISMALARIM" />
           <EntitySet Name="TBLHAKKIMDA" EntityType="Self.TBLHAKKIMDA" />
-          <EntitySet Name="TBLILETISIM" EntityType="Self.TBLILETISIM" />
           <EntitySet Name="TBLYETENEKLER" EntityType="Self.TBLYETENEKLER" />
           <EntitySet Name="TBLADRES" EntityType="DBCVENTITYModel.TBLADRES" />
+          <EntitySet Name="TBLILETISIM" EntityType="DBCVENTITYModel.TBLILETISIM" />
+          <EntitySet Name="TBLADMIN" EntityType="DBCVENTITYModel.TBLADMIN" />
         </EntityContainer>
         <EntityType Name="TBLADRES">
           <Key>
@@ -108,6 +110,24 @@
           <Property Name="MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ADRES" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="KONUM" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBLILETISIM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ADSOYAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KONU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MESAJ" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBLADMIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KULLANICIADI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SIFRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -133,16 +153,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TBLILETISIM">
-            <EntityTypeMapping TypeName="DBCVENTITYModel.TBLILETISIM">
-              <MappingFragment StoreEntitySet="TBLILETISIM">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="ADSOYAD" ColumnName="ADSOYAD" />
-                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
-                <ScalarProperty Name="MESAJ" ColumnName="MESAJ" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TBLYETENEKLER">
             <EntityTypeMapping TypeName="DBCVENTITYModel.TBLYETENEKLER">
               <MappingFragment StoreEntitySet="TBLYETENEKLER">
@@ -159,6 +169,26 @@
                 <ScalarProperty Name="ADRES" ColumnName="ADRES" />
                 <ScalarProperty Name="MAIL" ColumnName="MAIL" />
                 <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLILETISIM">
+            <EntityTypeMapping TypeName="DBCVENTITYModel.TBLILETISIM">
+              <MappingFragment StoreEntitySet="TBLILETISIM">
+                <ScalarProperty Name="MESAJ" ColumnName="MESAJ" />
+                <ScalarProperty Name="KONU" ColumnName="KONU" />
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+                <ScalarProperty Name="ADSOYAD" ColumnName="ADSOYAD" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLADMIN">
+            <EntityTypeMapping TypeName="DBCVENTITYModel.TBLADMIN">
+              <MappingFragment StoreEntitySet="TBLADMIN">
+                <ScalarProperty Name="SIFRE" ColumnName="SIFRE" />
+                <ScalarProperty Name="KULLANICIADI" ColumnName="KULLANICIADI" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

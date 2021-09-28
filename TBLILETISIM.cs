@@ -17,6 +17,7 @@ namespace CvEntityProje
         public int ID { get; set; }
         public string ADSOYAD { get; set; }
         public string MAIL { get; set; }
+        public string KONU { get; set; }
         public string MESAJ { get; set; }
     }
 }
