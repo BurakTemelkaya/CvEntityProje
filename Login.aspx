@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="CvEntityProje.Login" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <title>Login V15</title>
     <meta charset="UTF-8">
@@ -30,28 +30,24 @@
     <!--===============================================================================================-->
 </head>
 <body>
-
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
                 <div class="login100-form-title" style="background-image: url(Login/images/bg-01.jpg);">
-                    <span class="login100-form-title-1">Entity CV Admin Panel
+                    <span class="login100-form-title-1">Entity CV Admin Panel Girişi
                     </span>
                 </div>
-
                 <form class="login100-form validate-form" runat="server">
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Lütfen Kullanıcı Adı Giriniz">
                         <span class="label-input100">Kullanıcı Adı :</span>
                         <asp:TextBox ID="txtKullaniciAdi" CssClass="input100" placeholder="Kullanıcı Adınızı Giriniz" runat="server"></asp:TextBox>
                         <span class="focus-input100"></span>
                     </div>
-
                     <div class="wrap-input100 validate-input m-b-18" data-validate="Lütfen Şifre Giriniz">
                         <span class="label-input100">Şifre :</span>
-                        <asp:TextBox ID="txtSifre" CssClass="input100" placeholder="Şifrenizi Giriniz" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtSifre" CssClass="input100" placeholder="Şifrenizi Giriniz" runat="server" TextMode="Password"></asp:TextBox>
                         <span class="focus-input100"></span>
                     </div>
-
                     <div class="flex-sb-m w-full p-b-30">
                         <div class="contact100-form-checkbox">
                             <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
@@ -59,11 +55,13 @@
                                 Beni Hatırla
                             </label>
                         </div>
-
                         <div>
                             <a href="#" class="txt1">Şifreni mi Unuttun?
                             </a>
                         </div>
+                    </div>
+                    <div class="flex-sb-m p-b-30">
+                        <asp:Label ID="lblHataMesaji" runat="server" CssClass="text-danger"></asp:Label>
                     </div>
 
                     <div class="container-login100-form-btn">
@@ -73,7 +71,6 @@
             </div>
         </div>
     </div>
-
     <!--===============================================================================================-->
     <script src="Login/vendor/jquery/jquery-3.2.1.min.js"></script>
     <!--===============================================================================================-->
@@ -90,6 +87,5 @@
     <script src="Login/vendor/countdowntime/countdowntime.js"></script>
     <!--===============================================================================================-->
     <script src="Login/js/main.js"></script>
-
 </body>
 </html>

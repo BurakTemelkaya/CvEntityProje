@@ -12,22 +12,36 @@ namespace CvEntityProje
         DBCVENTITYEntities db = new DBCVENTITYEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Kullanici"]!=null)
+            {
+                Response.Redirect("Iletisim.aspx");
+            }
         }
 
         protected void btnGirisYap_Click(object sender, EventArgs e)
         {
-            var sorgu = from x in db.TBLADMIN
-                        where x.KULLANICIADI == txtKullaniciAdi.Text &&
-                        x.SIFRE == txtSifre.Text
-                        select x;
-            if (sorgu.Any())
+            var kullaniciAdisorgu = from x in db.TBLADMIN
+                                    where x.KULLANICIADI == txtKullaniciAdi.Text
+                                    select x;
+            if (kullaniciAdisorgu.Any())
             {
-                Response.Redirect("Iletisim.aspx");
+                var sifreSorgu = from x in db.TBLADMIN
+                                 where x.KULLANICIADI == txtKullaniciAdi.Text &&
+                                 x.SIFRE == txtSifre.Text
+                                 select x;
+                if (sifreSorgu.Any())
+                {
+                    Session.Add("Kullanici", txtKullaniciAdi.Text);
+                    Response.Redirect("Iletisim.aspx");
+                }
+                else
+                {
+                    lblHataMesaji.Text = "Şifrenizi Hatalı Girdiniz.";
+                }
             }
             else
             {
-                Response.Write("Hatalı Kullanıcı adı yada şifre");
+                lblHataMesaji.Text = "Kullanıcı Adınız Hatalı Girdiniz.";
             }
         }
     }

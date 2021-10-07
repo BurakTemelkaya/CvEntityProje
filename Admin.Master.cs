@@ -11,7 +11,16 @@ namespace CvEntityProje
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Kullanici"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+        }
 
+        protected void btnCikisYap_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("Login.aspx");
         }
     }
 }
