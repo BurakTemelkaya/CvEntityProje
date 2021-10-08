@@ -19,6 +19,22 @@ namespace CvEntityProje
                 txtKonu.Text = Mesaj.KONU;
                 txtMail.Text = Mesaj.MAIL;
                 txtMesaj.Text = Mesaj.MESAJ;
+
+                var mesaj = db.TBLILETISIM.Find(ID);
+                mesaj.OKUNDU_MU = true;
+                db.SaveChanges();
+            }
+        }
+
+        protected void btnOkunmadıOlarakIsaretle_Click(object sender, EventArgs e)
+        {
+            using (DBCVENTITYEntities db = new DBCVENTITYEntities())
+            {
+                int ID = Convert.ToInt32(Request.QueryString["ID"]);
+                var mesaj = db.TBLILETISIM.Find(ID);
+                mesaj.OKUNDU_MU = false;
+                db.SaveChanges();
+                btnOkunmadıOlarakIsaretle.Visible = false;
             }
         }
     }

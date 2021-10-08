@@ -28,6 +28,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CALISMA_ADİ" Type="varchar" MaxLength="50" />
           <Property Name="ADRES" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="TBLHAKKIMDA">
@@ -48,6 +49,7 @@
           <Property Name="MAIL" Type="varchar" MaxLength="50" />
           <Property Name="KONU" Type="varchar" MaxLength="50" />
           <Property Name="MESAJ" Type="varchar" MaxLength="500" />
+          <Property Name="OKUNDU_MU" Type="bit" />
         </EntityType>
         <EntityType Name="TBLYETENEKLER">
           <Key>
@@ -75,6 +77,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ADRES" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CALISMA_ADİ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TBLHAKKIMDA">
           <Key>
@@ -120,6 +123,7 @@
           <Property Name="MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="KONU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="MESAJ" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="OKUNDU_MU" Type="Boolean" />
         </EntityType>
         <EntityType Name="TBLADMIN">
           <Key>
@@ -138,6 +142,7 @@
           <EntitySetMapping Name="TBLCALISMALARIM">
             <EntityTypeMapping TypeName="DBCVENTITYModel.TBLCALISMALARIM">
               <MappingFragment StoreEntitySet="TBLCALISMALARIM">
+                <ScalarProperty Name="CALISMA_ADİ" ColumnName="CALISMA_ADİ" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ADRES" ColumnName="ADRES" />
               </MappingFragment>
@@ -176,6 +181,7 @@
           <EntitySetMapping Name="TBLILETISIM">
             <EntityTypeMapping TypeName="DBCVENTITYModel.TBLILETISIM">
               <MappingFragment StoreEntitySet="TBLILETISIM">
+                <ScalarProperty Name="OKUNDU_MU" ColumnName="OKUNDU_MU" />
                 <ScalarProperty Name="MESAJ" ColumnName="MESAJ" />
                 <ScalarProperty Name="KONU" ColumnName="KONU" />
                 <ScalarProperty Name="MAIL" ColumnName="MAIL" />

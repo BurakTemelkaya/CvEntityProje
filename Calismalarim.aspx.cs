@@ -9,9 +9,11 @@ namespace CvEntityProje
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
+        DBCVENTITYEntities db = new DBCVENTITYEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            RepeaterCalismalar.DataSource = db.TBLCALISMALARIM.ToList();
+            RepeaterCalismalar.DataBind();
         }
     }
 }

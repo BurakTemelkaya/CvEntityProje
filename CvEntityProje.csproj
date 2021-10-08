@@ -175,11 +175,13 @@
     <Content Include="web2\resimler\img1.jpg" />
     <Content Include="web2\Yeni Metin Belgesi.txt" />
     <Content Include="Istatistik.aspx" />
+    <Content Include="CalismaEkle.aspx" />
+    <Content Include="CalismaSil.aspx" />
     <Content Include="YetenekGuncelle.aspx" />
     <Content Include="YetenekSil.aspx" />
     <Content Include="YeniYetenek.aspx" />
     <Content Include="Yeteneklerim.aspx" />
-    <Content Include="Deneyimler.aspx" />
+    <Content Include="Calismalarim.aspx" />
     <Content Include="web\css\bootstrap.css" />
     <Content Include="web\css\fontawesome-all.min.css" />
     <Content Include="web\css\style.css" />
@@ -269,6 +271,20 @@
     <Compile Include="Istatistik.aspx.designer.cs">
       <DependentUpon>Istatistik.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CalismaEkle.aspx.cs">
+      <DependentUpon>CalismaEkle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalismaEkle.aspx.designer.cs">
+      <DependentUpon>CalismaEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CalismaSil.aspx.cs">
+      <DependentUpon>CalismaSil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalismaSil.aspx.designer.cs">
+      <DependentUpon>CalismaSil.aspx</DependentUpon>
+    </Compile>
     <Compile Include="YetenekGuncelle.aspx.cs">
       <DependentUpon>YetenekGuncelle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -297,12 +313,12 @@
     <Compile Include="Yeteneklerim.aspx.designer.cs">
       <DependentUpon>Yeteneklerim.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Deneyimler.aspx.cs">
-      <DependentUpon>Deneyimler.aspx</DependentUpon>
+    <Compile Include="Calismalarim.aspx.cs">
+      <DependentUpon>Calismalarim.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Deneyimler.aspx.designer.cs">
-      <DependentUpon>Deneyimler.aspx</DependentUpon>
+    <Compile Include="Calismalarim.aspx.designer.cs">
+      <DependentUpon>Calismalarim.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -11,4 +11,6 @@
     <asp:TextBox ID="txtKonu" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
     <br />
     <asp:TextBox ID="txtMesaj" runat="server" CssClass="form-control h5" TextMode="MultiLine" Enabled="False"></asp:TextBox>
+    <br />
+    <asp:Button ID="btnOkunmadıOlarakIsaretle" CssClass="btn btn-warning" runat="server" Text="Okunmadı Olarak İşaretle" OnClick="btnOkunmadıOlarakIsaretle_Click" />
 </asp:Content>

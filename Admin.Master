@@ -19,7 +19,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="Default.aspx">Ana Sayfa</a></li>
                     <li><a href="Yeteneklerim.aspx">Yeteneklerim</a></li>
-                    <li><a href="Deneyimler.aspx">Deneyimler</a></li>
+                    <li><a href="Calismalarim.aspx">Çalışmalarım</a></li>
                     <li><a href="Iletisim.aspx">İletişim</a></li>
                     <li><a href="#" runat="server" ID="btnCikisYap" class="text-danger" onserverClick="btnCikisYap_Click">Çıkış Yap</a></li>
                 </ul>

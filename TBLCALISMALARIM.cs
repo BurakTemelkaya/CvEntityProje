@@ -16,5 +16,6 @@ namespace CvEntityProje
     {
         public int ID { get; set; }
         public string ADRES { get; set; }
+        public string CALISMA_ADİ { get; set; }
     }
 }

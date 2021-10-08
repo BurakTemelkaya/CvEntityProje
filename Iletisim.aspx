@@ -11,7 +11,7 @@
                 <th>Mail</th>
                 <th>Konu</th>
                 <th>Mesajı Gör</th>
-                <th>Güncelle</th>
+                <th>Okundu MU ?</th>
             </tr>
         </thead>
         <tbody>
@@ -25,7 +25,9 @@
                         <td>
                             <asp:HyperLink ID="HyperLinkGuncelle" runat="server"
                                 NavigateUrl='<%#("MesajDetay.aspx?ID="+Eval("ID")) %>'
-                                CssClass="btn btn-warning" BackColor="#CC6699">Mesajı Görüntüle</asp:HyperLink></td>
+                                CssClass="btn btn-warning" BackColor="#CC6699">Mesajı Görüntüle</asp:HyperLink>
+                        </td>
+                        <td><%#(bool)Eval("OKUNDU_MU") == false ? "Okunmadı" : "Okundu" %></td>
                     </tr>
                 </ItemTemplate>
             </asp:Repeater>

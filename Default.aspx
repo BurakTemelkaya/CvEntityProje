@@ -128,7 +128,7 @@
             </div>
             <div class="cpy-right text-center">
                 <p>
-                    © 2021 Burak Temelkaya. Tüm Hakları Saklıdır | 
+                    © 2021 Burak Temelkaya. Tüm Hakları Saklıdır
                 </p>
             </div>
         </section>

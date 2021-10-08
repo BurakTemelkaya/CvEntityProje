@@ -19,5 +19,6 @@ namespace CvEntityProje
         public string MAIL { get; set; }
         public string KONU { get; set; }
         public string MESAJ { get; set; }
+        public Nullable<bool> OKUNDU_MU { get; set; }
     }
 }

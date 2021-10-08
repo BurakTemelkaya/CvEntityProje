@@ -11,52 +11,61 @@ namespace CvEntityProje
 {
 
 
-    public partial class WebForm7
+    public partial class WebForm9
     {
 
         /// <summary>
-        /// txtGonderen control.
+        /// lblCalismaAdi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGonderen;
+        protected global::System.Web.UI.WebControls.Label lblCalismaAdi;
 
         /// <summary>
-        /// txtMail control.
+        /// txtCalismaAdi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMail;
+        protected global::System.Web.UI.WebControls.TextBox txtCalismaAdi;
 
         /// <summary>
-        /// txtKonu control.
+        /// lblCalismaAdresi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtKonu;
+        protected global::System.Web.UI.WebControls.Label lblCalismaAdresi;
 
         /// <summary>
-        /// txtMesaj control.
+        /// txtAdres control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMesaj;
+        protected global::System.Web.UI.WebControls.TextBox txtAdres;
 
         /// <summary>
-        /// btnOkunmadıOlarakIsaretle control.
+        /// btnCalismaEkle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnOkunmadıOlarakIsaretle;
+        protected global::System.Web.UI.WebControls.Button btnCalismaEkle;
+
+        /// <summary>
+        /// lblUyari control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUyari;
     }
 }
